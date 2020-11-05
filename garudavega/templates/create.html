@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block main %}
+<div class="container jumbotron">
+    <form method="POST" action="{% url 'createpost' user %}">
+        {% csrf_token %}
+        <h2>Enter the title....</h2>
+        <input type="text" name="title" placeholder="Enter the title of problem">
+        <br>
+        <h2>Enter your problem...</h2>
+        <textarea name="problem" placeholder="Enter your problem here..."></textarea>
+        <br><input type="submit" name="Post" class="btn btn-primary">
+
+    </form>
+</div>
+{% endblock main %}

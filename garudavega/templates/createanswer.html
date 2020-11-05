@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block main %}
+<div class="container jumbotron">
+    <h1>Thanks {{args}}, for contributing!</h1>
+<form method="POST" action="{% url 'answera' args pk %}">
+    {% csrf_token %}
+    
+    <textarea name="answer" placeholder="Enter your answer here..."></textarea> 
+    <br><input type="submit" class="btn btn-primary" value="Answer">
+</form>
+</div>
+{% endblock main %}

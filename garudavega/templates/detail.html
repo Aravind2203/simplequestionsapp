@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block main %}
+<div class="container jumbotron">
+    <p>Author:{{post.write}}</p>
+    <h1>{{post.title}}</h1>
+    
+    <h5>{{post.problem}}</h5>
+    <p>{{post.published_date}}</p>
+    <hr>
+    <h1>Answers:</h1>
+    <a href="{% url 'a' user post.id %}" class="btn btn-primary">Give your answer</a>
+    {% for a in anss %}
+    <h5>{{a}}</h5>
+    <p>Author:{{a.author}}</p>
+    <hr>
+    {% endfor %}
+</div>
+{% endblock %}

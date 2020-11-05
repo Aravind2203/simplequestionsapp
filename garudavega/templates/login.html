@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block main %}
+<div class="container jumbotron">
+<form method="POST" method="{% url 'login' %}">
+    {% csrf_token %}
+    <h1>Login-here!</h1>
+    <input type="text" name="username" placeholder="Enter your username here..">
+    <input type="password" name="password" placeholder="Enter your password here....">
+    <input type="submit" value="Login" class="btn btn-primary">
+</form>
+</div>
+{% endblock main %}
